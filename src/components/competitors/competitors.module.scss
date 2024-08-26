@@ -1,0 +1,26 @@
+@use '../../variables.scss' as mixin;
+
+.competitors_container{
+  .competitors_header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    h1{
+      font-size: 3rem;
+      line-height: 56px;
+      margin: 0 0 10px 0;
+    }
+    p{
+      color: mixin.$secondaryTextColor;
+      width: 720px;
+      text-align: center;
+      word-wrap: break-word ;
+    }
+  }
+  .competitors{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
