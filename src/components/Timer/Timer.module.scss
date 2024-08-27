@@ -1,30 +1,58 @@
 @use '../../variables.scss' as mixin;
 
-
-.countdown{
+.countdown {
   margin: 30px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .time{
-    margin: 20px 0;
+  margin: 80px 0 80px 0;
+
+  @media (max-width: mixin.$mobileBreakPoints) {
+    height: 30vh;
+    margin: 50px 0 20px 0;
+  }
+  .time {
+    margin-top: 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    @media (max-width: mixin.$mobileBreakPoints) {
+      gap: 10px;
+    }
+
+    .divider {
+      height: 80px;
+      margin-top: -50px;
+      @media (max-width: mixin.$mobileBreakPoints) {
+        height: 40px;
+        margin-top: -10px;
+      }
+    }
   }
-  .digit_text{
+  .digit_text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
-    .digit{
-      font-size: 8rem;
+    .digit {
+      font-size: 10rem;
       font-weight: 700;
+      @media (max-width: mixin.$mobileBreakPoints) {
+        font-size: 3rem;
+        line-height: 3rem;
+        letter-spacing: 2px;
+      }
     }
-    .text{
+    .text {
       font-size: 2rem;
       font-weight: 600;
       text-transform: uppercase;
+      @media (max-width: mixin.$mobileBreakPoints) {
+        font-size: 1rem;
+        font-weight: 400;
+      }
     }
   }
 }

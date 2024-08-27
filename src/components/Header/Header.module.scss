@@ -1,7 +1,7 @@
 @use '../../variables.scss' as mixin;
 
 .header{
-  margin: 1.5rem 0;
+  // margin: 1.5rem 0;
   ul{
     display: flex;
     justify-content: space-between;
@@ -13,5 +13,9 @@
     text-decoration: none;
     font-size: 1.55rem;
     color: mixin.$secondaryColor;
+    @media (max-width: mixin.$mobileBreakPoints){
+      font-size: 1rem;
+      margin: 0 10px;
+    }
   }
 }

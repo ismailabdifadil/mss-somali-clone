@@ -1,8 +1,12 @@
 import styles from './competitors.module.scss';
 import Competitor from '../competitor/Competitor';
 import { useSelector } from 'react-redux';
-const Competitors = () => {
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+const Competitors = ({ isHome }) => {
   const { competitors } = useSelector((store) => store.competitor);
+  const [showAll, setShowAll] = useState(false);
+  const compters = competitors.slice(0, 6);
   return (
     <div className={styles.competitors_container}>
       <div className={styles.competitors_header}>
@@ -13,10 +17,19 @@ const Competitors = () => {
         </p>
       </div>
       <div className={styles.competitors}>
-        {competitors.map((competitor) => (
-          <Competitor key={competitor.Id} competitor={competitor} />
-        ))}
+        {isHome
+          ? compters.map((competitor) => (
+              <Competitor key={competitor.Id} competitor={competitor} />
+            ))
+          : competitors.map((competitor) => (
+              <Competitor key={competitor.Id} competitor={competitor} />
+            ))}
       </div>
+      {isHome && (
+        <Link to="/competitors">
+          <button className={styles.show_all}>Show All</button>
+        </Link>
+      )}
     </div>
   );
 };

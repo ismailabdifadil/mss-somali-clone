@@ -10,17 +10,7 @@ import {
   increaseVote,
   resetState,
 } from '../../features/competirors/competitorSlice';
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
+import { FaTimes } from 'react-icons/fa';
 
 Modal.setAppElement('#root');
 
@@ -37,7 +27,6 @@ const VoteModal = () => {
     backgroundRepeat: 'no-repeat',
     borderBottomRightRadius: '10px',
   };
-  let subtitle;
 
   const { isOpen } = useSelector((store) => store.modal);
   const dispatch = useDispatch();
@@ -54,14 +43,19 @@ const VoteModal = () => {
       <Modal
         isOpen={isOpen}
         onRequestClose={() => dispatch(handleClick())}
-        style={customStyles}
         contentLabel="Example Modal"
-        className={styles.modal}
+        className={styles.content}
         overlayClassName={styles.overlay}
       >
         <div className={styles.modal_container}>
           <div className={styles.competitor_info}>
-            <div style={backgroundStyle}></div>
+            <div className={styles.image} style={backgroundStyle}>
+              <FaTimes
+                color="#fff"
+                className={styles.close_icon}
+                onClick={() => dispatch(handleClick())}
+              />
+            </div>
             <div className={styles.bio}>
               <div className={styles.divider}>
                 <label htmlFor="">Full Name</label>

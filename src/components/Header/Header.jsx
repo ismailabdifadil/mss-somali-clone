@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 const Header = () => {
   return (
@@ -5,10 +6,10 @@ const Header = () => {
       <header className={styles.header}>
         <ul>
           <li>
-            <a href="#">Miss Somali</a>
+            <Link to="/">Miss Somali</Link>
           </li>
           <li>
-            <a href="#">All Competitors</a>
+            <Link to="/competitors">All Competitors</Link>
           </li>
         </ul>
       </header>

@@ -1,26 +1,51 @@
 @use '../../variables.scss' as mixin;
 
-.competitors_container{
-  .competitors_header{
+.competitors_container {
+  .competitors_header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
-    h1{
+    h1 {
       font-size: 3rem;
       line-height: 56px;
       margin: 0 0 10px 0;
     }
-    p{
+    p {
       color: mixin.$secondaryTextColor;
       width: 720px;
       text-align: center;
-      word-wrap: break-word ;
+      // word-wrap: break-word;
+      @media (max-width: mixin.$mobileBreakPoints) {
+        max-width: 350px;
+        // word-wrap: break-word;
+      }
     }
   }
-  .competitors{
+  .competitors {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media (max-width: mixin.$mobileBreakPoints) {
+      grid-template-columns: 1fr;
+    }
   }
+
+}
+.show_all{
+  border: none;
+  background-color: mixin.$secondaryColor;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin:  20px auto;
+  display: block;
+
+}
+.show_all:hover{
+  opacity: 0.8;
 }

@@ -1,5 +1,23 @@
 @use '../../variables.scss' as mixin;
 
+// .overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background-color: rgba(28, 5, 50, 0.316);
+// }
+
+// overlay: {
+//   position: 'fixed',
+//   top: 0,
+//   left: 0,
+//   right: 0,
+//   bottom: 0,
+//   backgroundColor: 'rgba(28, 5, 50, 0.316)',
+// },
+
 .overlay {
   position: fixed;
   top: 0;
@@ -9,36 +27,102 @@
   background-color: rgba(28, 5, 50, 0.316);
 }
 
-.modal {
+.image {
+  position: relative;
+  .close_icon {
+    background-color: mixin.$primaryColor;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+
+    @media (max-width: mixin.$mobileBreakPoints){
+      display: block;
+    }
+  }
+}
+.content {
   position: absolute;
   top: 40px;
   left: 40px;
-  right: 40px;
   bottom: 40px;
-  background-color: rgb(247, 247, 249);
-  width: 80vw;
-  // height: 100vh;
-  border-radius: 10px;
+  right: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   outline: none;
+  border-radius: 10px;
+  overflow-x: hidden;
+  background-color: rgb(247, 247, 249);
+
+  @media (max-width: mixin.$mobileBreakPoints) {
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 0;
+  }
 }
+
+// content: {
+//   position: 'absolute',
+//   top: '40px',
+//   left: '40px',
+//   right: '40px',
+//   bottom: '40px',
+//   border: '1px solid #ccc',
+//   background: '#fff',
+//   overflow: 'scroll',
+//   WebkitOverflowScrolling: 'touch',
+//   borderRadius: '4px',
+//   outline: 'none',
+//   padding: '-11px'
+//   // padding: '20px',
+// },
+// .modal {
+//   position: absolute;
+//   top: 40px;
+//   left: 40px;
+//   right: 40px;
+//   // bottom: 40px;
+//   background-color: rgb(247, 247, 249);
+//   width: 80vw;
+//   // height: 100vh;
+//   border-radius: 10px;
+//   outline: none;
+//   @media (max-width: mixin.$mobileBreakPoints){
+//     width: 100%;
+//   }
+// }
 
 .modal_container {
   display: flex;
   justify-content: center;
-  // align-items: center;
   flex-direction: column;
   color: mixin.$primaryColor;
+  // overflow-y: scroll;
 
   .competitor_info {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 10px;
 
+    @media (max-width: mixin.$mobileBreakPoints) {
+      grid-template-columns: 1fr;
+    }
+
     .bio {
       display: flex;
       flex-direction: column;
-      // justify-content: center;
+      justify-content: center;
       color: mixin.$primaryColor;
+      padding-left: 10px;
 
       .divider {
         display: flex;
@@ -60,6 +144,10 @@
     position: relative;
     display: grid;
     grid-template-columns: 1fr 2fr;
+
+    @media (max-width: mixin.$mobileBreakPoints) {
+      grid-template-columns: 1fr;
+    }
 
     .vote_count {
       display: flex;
@@ -106,6 +194,9 @@
         color: mixin.$primaryColor;
         font-size: 1.25rem;
         font-weight: 500;
+        @media (max-width: mixin.$mobileBreakPoints) {
+          font-size: 1rem;
+        }
       }
 
       .form_control {
