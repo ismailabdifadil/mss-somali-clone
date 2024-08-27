@@ -1,0 +1,9 @@
+@use '../../variables.scss' as mixin;
+.footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 0;
+  border-top: 1px solid #35353a;
+}
