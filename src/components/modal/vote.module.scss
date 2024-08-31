@@ -1,23 +1,5 @@
 @use '../../variables.scss' as mixin;
 
-// .overlay {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   background-color: rgba(28, 5, 50, 0.316);
-// }
-
-// overlay: {
-//   position: 'fixed',
-//   top: 0,
-//   left: 0,
-//   right: 0,
-//   bottom: 0,
-//   backgroundColor: 'rgba(28, 5, 50, 0.316)',
-// },
-
 .overlay {
   position: fixed;
   top: 0;
@@ -69,37 +51,6 @@
     border-radius: 0;
   }
 }
-
-// content: {
-//   position: 'absolute',
-//   top: '40px',
-//   left: '40px',
-//   right: '40px',
-//   bottom: '40px',
-//   border: '1px solid #ccc',
-//   background: '#fff',
-//   overflow: 'scroll',
-//   WebkitOverflowScrolling: 'touch',
-//   borderRadius: '4px',
-//   outline: 'none',
-//   padding: '-11px'
-//   // padding: '20px',
-// },
-// .modal {
-//   position: absolute;
-//   top: 40px;
-//   left: 40px;
-//   right: 40px;
-//   // bottom: 40px;
-//   background-color: rgb(247, 247, 249);
-//   width: 80vw;
-//   // height: 100vh;
-//   border-radius: 10px;
-//   outline: none;
-//   @media (max-width: mixin.$mobileBreakPoints){
-//     width: 100%;
-//   }
-// }
 
 .modal_container {
   display: flex;
