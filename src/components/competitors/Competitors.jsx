@@ -17,7 +17,7 @@ const Competitors = ({ isHome }) => {
         </p>
       </div>
       <div className={styles.competitors}>
-        {isHome
+        {isHome && !showAll
           ? compters.map((competitor) => (
               <Competitor key={competitor.Id} competitor={competitor} />
             ))
@@ -26,9 +26,12 @@ const Competitors = ({ isHome }) => {
             ))}
       </div>
       {isHome && (
-        <Link to="/competitors">
-          <button className={styles.show_all}>Show All</button>
-        </Link>
+        <button
+          className={styles.show_all}
+          onClick={() => setShowAll(!showAll)}
+        >
+          {showAll ? 'Show Less' : 'Show All'}
+        </button>
       )}
     </div>
   );

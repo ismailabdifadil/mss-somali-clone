@@ -7,8 +7,8 @@ const HomePage = () => {
     <div>
       <Time />
       <Competitors isHome={true} />
-      <Footer />
       <VoteModal />
+      <Footer />
     </div>
   );
 };
